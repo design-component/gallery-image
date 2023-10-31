@@ -1,4 +1,4 @@
-.images-grid {
+.images-grid ul {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 30px;
@@ -6,7 +6,7 @@
 	grid-auto-rows: 1fr;
 }
 
-.images-grid .image:nth-child(1) {
+.images-grid ul li:nth-child(1) {
 	grid-column: span 2;
 	grid-row: span 2;
 }
@@ -14,7 +14,7 @@
 	min-width: 300px;
 	min-height: 300px;
 } */
-.images-grid .image {
+.image {
 	background-color: #fff;
 	border: 1px solid #ddd;
 	border-radius: 10px;

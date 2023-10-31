@@ -48,3 +48,6 @@ Provide us with the following:
 ## Note:
 
 Feel free to showcase your creativity and React JS skills in the implementation of the image gallery. We look forward to seeing your work!
+
+dnd links
+https://www.youtube.com/watch?v=uSRlG4hNH50
