@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.add-image-file {
+	border: 2px dashed #ddd;
+	border-radius: 10px;
+}
