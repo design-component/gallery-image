@@ -57,7 +57,7 @@ export const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				selected: [],
-				images: action.payload,
+				images: action.payload.map((e) => ({ ...e, selected: false })),
 			};
 		default:
 			return state;

@@ -5,7 +5,9 @@ function Img({ data, state, dispatch }) {
 
 	return (
 		<div
-			className={`${style.image} shadow ${!data.selected && style.selected}`}
+			className={`${style.image} shadow ${
+				data.selected ? style.selected : style.notSelected
+			}`}
 		>
 			<input
 				onChange={(e) =>
@@ -20,6 +22,7 @@ function Img({ data, state, dispatch }) {
 				type="checkbox"
 				name=""
 				id=""
+				checked={data.selected}
 				className={style.checkboxSelect}
 			/>
 			<img src={data.url} />

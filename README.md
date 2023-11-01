@@ -51,3 +51,6 @@ Feel free to showcase your creativity and React JS skills in the implementation 
 
 dnd links
 https://www.youtube.com/watch?v=uSRlG4hNH50
+https://codesandbox.io/s/framer-motion-grid-cc859
+https://codesandbox.io/s/framer-motion-2-drag-to-reorder-fc4rt
+https://codesandbox.io/s/framer-motion-2-drag-to-reorder-2d-eko08
