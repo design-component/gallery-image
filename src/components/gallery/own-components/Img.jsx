@@ -1,8 +1,6 @@
 import style from '../gallery.module.css';
 
-function Img({ data, state, dispatch }) {
-	// console.log(state.selected);
-
+function Img({ data, dispatch }) {
 	return (
 		<div
 			className={`${style.image} shadow ${
@@ -26,7 +24,6 @@ function Img({ data, state, dispatch }) {
 				className={style.checkboxSelect}
 			/>
 			<img src={data.url} />
-			sr - {data.id}
 		</div>
 	);
 }

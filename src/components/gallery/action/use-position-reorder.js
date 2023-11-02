@@ -1,30 +1,6 @@
-import { useState, useRef } from 'react';
 import { clamp } from 'popmotion';
-import { arrayMoveImmutable, arrayMoveMutable } from 'array-move';
 
-export const usePositionReorder = (initialState) => {
-	const [order, setOrder] = useState(initialState);
-
-	// We need to collect an array of width and position data for all of this component's
-	// `Item` children, so we can later us that in calculations to decide when a dragging
-	// `Item` should swap places with its siblings.
-	const positions = useRef([]).current;
-	const updatePosition = (i, offset) => (positions[i] = offset);
-
-	// Find the ideal index for a dragging item based on its position in the array, and its
-	// current drag offset. If it's different to its current index, we swap this item with that
-	// sibling.
-	const updateOrder = (i, viewportBox) => {
-		const targetIndex = findIndex(i, viewportBox, positions);
-		if (targetIndex !== i) setOrder(arrayMoveImmutable(order, i, targetIndex));
-	};
-
-	return [order, updatePosition, updateOrder];
-};
-
-// This margin needs to match space between cells exactly.
-// TODO: Optimize for safer handling
-const margin = 20;
+const margin = 0.1;
 
 export const findIndex = (i, currentBox, positions) => {
 	let target = i;
@@ -101,7 +77,6 @@ export const findIndex = (i, currentBox, positions) => {
 		} else if (boxBelow.left + boxBelow.width / 2 > currentBox.x.center) {
 			return boxBelow.i - 1;
 		}
-
 		return target;
 	}
 

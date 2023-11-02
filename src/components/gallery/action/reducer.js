@@ -1,11 +1,11 @@
 import { initialState } from './initialState';
+import { arrayMoveImmutable } from 'array-move';
+import { findIndex } from './use-position-reorder';
 
 export const reducer = (state = initialState, action) => {
 	const data = action.payload;
 	switch (action.type) {
 		case 'ADD_IMG':
-			// const lastId = state.images[state.images.length - 1]?.id + 1 || 1;
-
 			const max = state.images.reduce((maxValue, currentItem) => {
 				return currentItem.id > maxValue ? currentItem.id : maxValue;
 			}, state.images[0].id);
@@ -53,6 +53,26 @@ export const reducer = (state = initialState, action) => {
 						};
 				}),
 			};
+
+		case 'UPDATE_ORDER':
+			const { i, viewportBox, positions } = action.payload;
+			const targetIndex = findIndex(i, viewportBox, positions);
+
+			if (targetIndex !== i) {
+				const reorderedImages = arrayMoveImmutable(
+					state.images,
+					i,
+					targetIndex
+				);
+
+				return {
+					...state,
+					images: reorderedImages,
+				};
+			} else {
+				return state;
+			}
+
 		case 'DND':
 			return {
 				...state,

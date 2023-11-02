@@ -1,4 +1,4 @@
-export function AddImage({ state, dispatch }) {
+export function AddImage({ dispatch }) {
 	return (
 		<div className="add-image-file">
 			<div className="rounded-md w-full h-full flex  justify-center items-center">

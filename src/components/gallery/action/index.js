@@ -1,3 +1,5 @@
 export * from './initialState';
 export * from './reducer';
-export * from './use-raised-shadow';
+export * from './test-data';
+export * from './use-measure-position';
+export * from './use-position-reorder';
