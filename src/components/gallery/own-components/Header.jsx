@@ -1,10 +1,12 @@
 import style from '../gallery.module.css';
+
 function Header({ state, dispatch }) {
 	return (
 		<div className={style['top-bar-of-gallery']}>
-			<div>
+			<div className="">
+				{/* if image will select that show selected otherwise show Gallery  */}
 				{state.selected.length > 0 ? (
-					<div className="flex gap-1 text-blue-700 items-center">
+					<div className="flex gap-1 text-blue-700 items-center ">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -29,6 +31,7 @@ function Header({ state, dispatch }) {
 				{state.selected.length > 0 && (
 					<button
 						className="btn bg-red-500 px-10 py-1 rounded-md text-white"
+						// delete dispatch
 						onClick={() =>
 							dispatch({
 								type: 'DELETE',

@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import style from '../gallery.module.css';
 import Img from './Img';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import style from '../gallery.module.css';
 import { useMeasurePosition } from '../action';
+
 export default function Item({
 	i,
 	item,
@@ -11,7 +12,9 @@ export default function Item({
 	state,
 	dispatch,
 }) {
+	// check drag is not
 	const [isDragging, setDragging] = useState(false);
+	// get current position and update
 	const ref = useMeasurePosition((pos) => updatePosition(i, pos));
 
 	return (
@@ -24,6 +27,7 @@ export default function Item({
 			style={{ zIndex: isDragging ? '3' : '1' }}
 			onDragStart={() => setDragging(true)}
 			onDragEnd={() => setDragging(false)}
+			// drag for useing dispatch update position and items
 			// eslint-disable-next-line no-unused-vars
 			onViewportBoxUpdate={(viewportBox, _) => {
 				isDragging &&

@@ -1,22 +1,28 @@
-import { useReducer, useRef } from 'react';
 import style from './gallery.module.css';
+import Item from './own-components/Item';
+import { useReducer, useRef } from 'react';
 import Header from './own-components/Header';
 import { initialState, reducer } from './action';
-import dummyImage from '../../assets/images/dummy-image.png';
-import Item from './own-components/Item';
 import { AddImage } from './own-components/AddImage';
+import dummyImage from '../../assets/images/dummy-image.png';
+
 const Gallery = () => {
+	// position for dnd
 	const positions = useRef([]).current;
 	const updatePosition = (i, offset) => (positions[i] = offset);
+
+	// manage state use reducer
 	const [state, dispatch] = useReducer(reducer, initialState);
 
 	return (
 		<div className={style['image-gallery-layout']}>
 			<div className={style['image-gallery-wrap']}>
+				{/* header of gallery  */}
 				<Header state={state} dispatch={dispatch} />
-				{/* <Test /> */}
+
 				<div className={style['image-gallery-box']}>
 					<div className={style['images-grid']}>
+						{/* all [] of images that loop here */}
 						{state.images.length > 0 ? (
 							state.images.map((item, i) => (
 								<Item
@@ -31,11 +37,14 @@ const Gallery = () => {
 							))
 						) : (
 							<div className={style.item}>
+								{/* if no images here that will show  */}
 								<div className={`${style.imageWrap}`}>
 									<img src={dummyImage} alt="dummy-image" />
 								</div>
 							</div>
 						)}
+
+						{/* add new image  */}
 						<AddImage state={state} dispatch={dispatch} />
 					</div>
 				</div>

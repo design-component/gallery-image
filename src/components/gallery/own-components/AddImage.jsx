@@ -21,8 +21,10 @@ export function AddImage({ dispatch }) {
 					</svg>
 					<span className="text-gray-600 font-medium">Upload file</span>
 				</label>
+
 				<input
 					id="upload"
+					// upload image dispatch 
 					onChange={(e) =>
 						dispatch({
 							type: 'ADD_IMG',
