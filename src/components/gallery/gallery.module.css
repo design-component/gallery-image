@@ -22,10 +22,13 @@
 	position: relative;
 	overflow: hidden;
 	transition: 1s;
-	cursor: pointer;
+	cursor: grab;
 }
 .image.selected {
 	transition: 1s;
+}
+.imageWrap img {
+	border-radius: 10px;
 }
 .image.notSelected:hover::before {
 	content: '';
@@ -53,6 +56,10 @@
 	transform: scale(1.8);
 	position: absolute;
 	cursor: pointer;
+}
+.checkboxSelectDisable {
+	transform: scale(1.2);
+	color: red;
 }
 .image {
 	width: 100%;
@@ -83,7 +90,8 @@
 .image-gallery-wrap {
 	background: #fff;
 	border-radius: 15px;
-	max-width: 1800px;
+	max-width: 1000px;
+	margin: 0 auto;
 	margin: 0 auto;
 
 	padding-bottom: 50px;

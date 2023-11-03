@@ -3,17 +3,18 @@ import { arrayMoveImmutable } from 'array-move';
 import { findIndex } from './use-position-reorder';
 
 export const reducer = (state = initialState, action) => {
+	console.log(state);
 	const data = action.payload;
 	switch (action.type) {
 		case 'ADD_IMG':
 			const max = state.images.reduce((maxValue, currentItem) => {
 				return currentItem.id > maxValue ? currentItem.id : maxValue;
-			}, state.images[0].id);
+			}, state.images[0]?.id);
 
 			const newImages = Array.from(data).map((image, i) => {
 				const imageUrl = URL.createObjectURL(image);
 				return {
-					id: max + i + 1,
+					id: max ? max + i + 1 : i + 1,
 					url: imageUrl,
 					selected: false,
 				};

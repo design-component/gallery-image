@@ -21,6 +21,7 @@ export default function Item({
 			initial={false}
 			className={style.item}
 			drag={true}
+			style={{ zIndex: isDragging ? '3' : '1' }}
 			onDragStart={() => setDragging(true)}
 			onDragEnd={() => setDragging(false)}
 			// eslint-disable-next-line no-unused-vars
