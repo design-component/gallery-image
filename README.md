@@ -20,7 +20,8 @@
 - This task was easy to add and delete images and using Grid Layout
 - Ordering is complex to set I need help of google to solve this.
 
-**live Link ** [https://abdur-shobur-gallery-layout.netlify.app/](https://abdur-shobur-gallery-layout.netlify.app/)
+**live Link V1** [https://abdur-shobur-gallery-layout.netlify.app/](https://abdur-shobur-gallery-layout.netlify.app/)
+**live Link V2** [https://abdur-shobur-gallery-layout-v2.netlify.app/](https://abdur-shobur-gallery-layout-v2.netlify.app/)
 
 ## Installation
 
